@@ -1,0 +1,158 @@
+.forum-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    .heading {
+        text-align: center;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-bottom: 2rem;
+    }
+    .sub-heading {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        font-weight: normal;
+    }
+
+    .question-form {
+        padding-block: 3rem;
+
+        form {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+
+            .form-group {
+                width: 100%;
+            }
+
+            label {
+                font-size: 1.5rem;
+                text-transform: capitalize;
+                font-weight: normal;
+            }
+
+            .question-title {
+                border: none;
+                outline: none;
+                border-radius: 0.5rem;
+
+                width: 100%;
+                padding: 1rem 0.5rem;
+                font-size: 1.5rem;
+                border: 1px solid hsl(120, 83%, 80%);
+                color: hsl(120, 83%, 30%);
+
+                &::placeholder {
+                    color: rgb(23, 233, 23);
+                }
+                &:focus,
+                &:active {
+                    border: none;
+                    box-shadow: 0 0 2px 1px rgb(23, 233, 23);
+                }
+            }
+
+            .question-description {
+                border: none;
+                outline: none;
+                border-radius: 0.5rem;
+
+                width: 100%;
+                padding: 1rem 0.5rem;
+                font-size: 1.5rem;
+                border: 1px solid hsl(120, 83%, 80%);
+                color: hsl(120, 83%, 30%);
+                resize: vertical;
+
+                &::placeholder {
+                    color: rgb(23, 233, 23);
+                }
+                &:focus,
+                &:active {
+                    border: none;
+                    box-shadow: 0 0 2px 1px rgb(23, 233, 23);
+                }
+            }
+
+            .question-button {
+                border: none;
+                outline: none;
+                background: rgb(23, 233, 23);
+                border-radius: 0.5rem;
+                color: #fff;
+                padding: 0.8rem 2rem;
+                cursor: pointer;
+
+                &:hover,
+                &:focus {
+                    background: hsl(120, 83%, 40%);
+                }
+            }
+        }
+    }
+
+    .questions-container {
+        h1 {
+            font-size: 2rem;
+            font-weight: normal;
+            text-align: center;
+            border-top: 0.1rem solid rgb(23, 223, 23);
+            padding: 2rem 1rem;
+        }
+
+        .question {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .question-content {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
+
+                a {
+                    h3 {
+                        font-size: 1.5rem;
+                        color: hsl(120, 83%, 30%);
+                    }
+
+                    p {
+                        font-size: 1.2rem;
+                        color: hsl(120, 83%, 30%);
+                    }
+
+                    .question-footer {
+                        display: flex;
+                        align-items: center;
+                        gap: 4rem;
+                        padding-top: 1rem;
+
+                        p {
+                            color: hsl(120, 83%, 50%);
+                            span {
+                                font-size: 1.2rem;
+                                color: hsl(120, 83%, 30%);
+                                font-weight: bolder;
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    background: hsl(120, 83%, 95%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+}

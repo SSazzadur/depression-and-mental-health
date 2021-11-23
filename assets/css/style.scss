@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.38, 1.15, 0.7, 1.12);
+}
+
+*::selection {
+    background: rgb(23, 233, 23);
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 8rem 5%;
+}
+.heading {
+    text-align: center;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+.sub-heading {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+p {
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@import "./components/fron-page/nav";
+@import "./components/fron-page/home";
+@import "./components/fron-page/introduction";
+@import "./components/fron-page/casestudy";
+@import "./components/fron-page/futurework";
+@import "./components/fron-page/footer";
+
+@import "./components/forum";

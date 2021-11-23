@@ -1,0 +1,30 @@
+.casestudy {
+    background: url("../images/background-img.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+
+        .box {
+            padding: 1rem;
+            border-radius: 0.5rem;
+
+            &:hover {
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                transform: translateY(-0.5rem);
+            }
+
+            h3 {
+                font-size: 2rem;
+            }
+            p {
+                color: rgb(23, 233, 23);
+                font-size: 1.4rem;
+                padding: 1rem 0;
+            }
+        }
+    }
+}

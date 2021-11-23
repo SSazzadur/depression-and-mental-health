@@ -1,0 +1,77 @@
+.footer {
+    background: url("../images/background-img.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+
+    .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        justify-items: center;
+
+        .box {
+            width: 90%;
+            margin: 0 auto;
+
+            h3 {
+                text-align: center;
+                font-size: 2.5rem;
+                padding: 1rem 0;
+            }
+            p,
+            a {
+                font-size: 1.5rem;
+                color: rgb(23, 223, 23);
+                padding: 0.5rem 0;
+            }
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                a {
+                    display: block;
+                    width: fit-content;
+
+                    &:hover {
+                        color: #333;
+                    }
+                }
+            }
+        }
+
+        .location {
+            p {
+                text-align: center;
+            }
+        }
+    }
+
+    .credit {
+        font-size: 2rem;
+        font-weight: normal;
+        text-align: center;
+        border-top: 0.1rem solid rgb(23, 223, 23);
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 611px) {
+    .footer {
+        .box-container {
+            .box {
+                .links {
+                    flex-direction: row;
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+
+    .about-us {
+        border-bottom: 0.1rem solid rgb(23, 223, 23);
+    }
+}

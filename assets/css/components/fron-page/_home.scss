@@ -1,0 +1,62 @@
+.home {
+    background: url("../images/dep1.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+
+    .content {
+        text-align: center;
+        padding-top: 3rem;
+
+        h1 {
+            font-size: 5rem;
+            color: rgb(23, 233, 23);
+        }
+        h3 {
+            font-size: 4rem;
+            color: #333;
+            font-weight: normal;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 3rem;
+            color: #333;
+            background: rgb(23, 223, 23);
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+            font-size: 1.7rem;
+            font-weight: 600;
+
+            &:hover {
+                background: rgb(18, 179, 18);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home {
+        .content {
+            h1 {
+                font-size: 4rem;
+            }
+            h3 {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .home {
+        .content {
+            h1 {
+                font-size: 3rem;
+            }
+            h3 {
+                font-size: 2rem;
+            }
+        }
+    }
+}
