@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?php include './components/_user.php' ?>
     <?php include './components/_nav.php' ?>
     <section>
         <div class="search">
@@ -41,6 +42,9 @@
                     <button type="submit" class="question-button">POST</button>
                 </form>
             </div>
+
+            <!-- temporary modal button -->
+            <button class="modal-open">Login</button>
 
             <div class="questions-container">
                 <h1>Browse your related questions</h1>

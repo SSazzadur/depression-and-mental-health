@@ -18,8 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <?php include './components/_nav.php' ?>
 
-
-
     <section>
         <div class="question-viewer">
             <h1>Question Title</h1>

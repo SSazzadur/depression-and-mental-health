@@ -1,0 +1,267 @@
+.modal-shadow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(3, 169, 244, 0.7);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+
+    opacity: 0;
+    pointer-events: none;
+
+    .close-btn {
+        position: absolute;
+        top: 9rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 3rem;
+        color: #fff;
+        background: hsl(199, 98%, 40%);
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        transition: 0.2s;
+        z-index: 9999;
+
+        &:hover {
+            background: hsl(199, 98%, 30%);
+        }
+    }
+
+    &.active {
+        background: rgba(23, 233, 23, 0.7);
+
+        .close-btn {
+            background: hsl(120, 83%, 40%);
+
+            &:hover {
+                background: hsl(120, 83%, 30%);
+            }
+        }
+    }
+
+    .container {
+        position: relative;
+        width: 800px;
+        height: 500px;
+        margin: 20px;
+
+        .blueBG {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 40px;
+            width: 100%;
+            height: 420px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+
+            .box {
+                position: relative;
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                h2 {
+                    color: #fff;
+                    font-size: 1.2em;
+                    font-family: 500;
+                    margin-bottom: 10px;
+                }
+
+                button {
+                    cursor: pointer;
+                    padding: 10px 20px;
+                    background: #fff;
+                    color: #333;
+                    font-size: 16px;
+                    font-weight: 500;
+                    border: none;
+                }
+            }
+        }
+
+        .form-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: #fff;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+            transition: 0.5s ease-in-out;
+            overflow: hidden;
+
+            .form {
+                position: absolute;
+                width: 100%;
+                padding: 50px;
+                transition: 0.5s;
+
+                form {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    gap: 2rem;
+                    width: 100%;
+
+                    h1 {
+                        font-size: 1.5em;
+                        color: #333;
+                        margin-bottom: 20px;
+                        font-weight: 500;
+                    }
+
+                    .form-group {
+                        width: 100%;
+
+                        label {
+                            font-size: 1.5rem;
+                            text-transform: capitalize;
+                            font-weight: normal;
+                        }
+
+                        input {
+                            border: none;
+                            outline: none;
+                            border-radius: 0.5rem;
+
+                            width: 100%;
+                            padding: 1rem 0.5rem;
+                            font-size: 1.5rem;
+                            border: 1px solid hsl(199, 98%, 80%);
+                            color: hsl(199, 98%, 50%);
+
+                            &::placeholder {
+                                color: hsl(199, 98%, 70%);
+                            }
+                            &:focus,
+                            &:active {
+                                border: none;
+                                box-shadow: 0 0 2px 1px hsl(199, 98%, 50%);
+                            }
+
+                            &[type="submit"] {
+                                border: none;
+                                outline: none;
+                                background: hsl(199, 98%, 50%);
+                                border-radius: 0.5rem;
+                                color: #fff;
+                                padding: 0.8rem 2rem;
+                                cursor: pointer;
+
+                                &:hover,
+                                &:focus {
+                                    background: hsl(199, 98%, 40%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .signIn-form {
+                left: 0;
+                transition-delay: 0.25s;
+            }
+
+            .signUp-form {
+                left: 100%;
+                transition-delay: 0s;
+            }
+
+            &.active {
+                left: 50%;
+
+                .signIn-form {
+                    left: -100%;
+                    transition-delay: 0s;
+                }
+                .signUp-form {
+                    left: 0;
+                    transition-delay: 0.25s;
+
+                    form {
+                        .form-group {
+                            input {
+                                border: 1px solid hsl(120, 83%, 80%);
+                                color: hsl(120, 83%, 50%);
+
+                                &::placeholder {
+                                    color: hsl(120, 83%, 70%);
+                                }
+                                &:focus,
+                                &:active {
+                                    border: 1px solid hsl(120, 83%, 50%);
+                                    box-shadow: 0 0 2px 1px hsl(120, 83%, 50%);
+                                }
+
+                                &[type="submit"] {
+                                    background: hsl(120, 83%, 50%);
+                                    color: #fff;
+
+                                    &:hover,
+                                    &:focus {
+                                        background: hsl(120, 83%, 40%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .container {
+            max-width: 400px;
+            height: 650px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .blueBG {
+                top: 0;
+                height: 100%;
+
+                .box {
+                    position: absolute;
+                    width: 100%;
+                    height: 150px;
+                    bottom: 0;
+                    &.signIn {
+                        top: 0;
+                    }
+                }
+            }
+
+            .form-box {
+                width: 100%;
+                height: 500px;
+                top: 0;
+                box-shadow: none;
+
+                &.active {
+                    left: 0;
+                    top: 150px;
+                }
+            }
+        }
+    }
+}

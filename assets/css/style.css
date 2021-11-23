@@ -902,4 +902,336 @@ header #menu {
   color: #0d8c0d;
   font-weight: bolder;
 }
+
+.modal-shadow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-color: rgba(3, 169, 244, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-shadow .close-btn {
+  position: absolute;
+  top: 9rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  font-size: 3rem;
+  color: #fff;
+  background: #028bca;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  z-index: 9999;
+}
+
+.modal-shadow .close-btn:hover {
+  background: #026897;
+}
+
+.modal-shadow.active {
+  background: rgba(23, 233, 23, 0.7);
+}
+
+.modal-shadow.active .close-btn {
+  background: #11bb11;
+}
+
+.modal-shadow.active .close-btn:hover {
+  background: #0d8c0d;
+}
+
+.modal-shadow .container {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: 20px;
+}
+
+.modal-shadow .container .blueBG {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 40px;
+  width: 100%;
+  height: 420px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+}
+
+.modal-shadow .container .blueBG .box {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-shadow .container .blueBG .box h2 {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 500;
+  margin-bottom: 10px;
+}
+
+.modal-shadow .container .blueBG .box button {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+.modal-shadow .container .form-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 5px 45px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.modal-shadow .container .form-box .form {
+  position: absolute;
+  width: 100%;
+  padding: 50px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.modal-shadow .container .form-box .form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.modal-shadow .container .form-box .form form h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.modal-shadow .container .form-box .form form .form-group {
+  width: 100%;
+}
+
+.modal-shadow .container .form-box .form form .form-group label {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: normal;
+}
+
+.modal-shadow .container .form-box .form form .form-group input {
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  border: 1px solid #9adefe;
+  color: #03adfc;
+}
+
+.modal-shadow .container .form-box .form form .form-group input::-webkit-input-placeholder {
+  color: #68cefd;
+}
+
+.modal-shadow .container .form-box .form form .form-group input:-ms-input-placeholder {
+  color: #68cefd;
+}
+
+.modal-shadow .container .form-box .form form .form-group input::-ms-input-placeholder {
+  color: #68cefd;
+}
+
+.modal-shadow .container .form-box .form form .form-group input::placeholder {
+  color: #68cefd;
+}
+
+.modal-shadow .container .form-box .form form .form-group input:focus, .modal-shadow .container .form-box .form form .form-group input:active {
+  border: none;
+  -webkit-box-shadow: 0 0 2px 1px #03adfc;
+          box-shadow: 0 0 2px 1px #03adfc;
+}
+
+.modal-shadow .container .form-box .form form .form-group input[type="submit"] {
+  border: none;
+  outline: none;
+  background: #03adfc;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+}
+
+.modal-shadow .container .form-box .form form .form-group input[type="submit"]:hover, .modal-shadow .container .form-box .form form .form-group input[type="submit"]:focus {
+  background: #028bca;
+}
+
+.modal-shadow .container .form-box .signIn-form {
+  left: 0;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.modal-shadow .container .form-box .signUp-form {
+  left: 100%;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.modal-shadow .container .form-box.active {
+  left: 50%;
+}
+
+.modal-shadow .container .form-box.active .signIn-form {
+  left: -100%;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.modal-shadow .container .form-box.active .signUp-form {
+  left: 0;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input {
+  border: 1px solid #a2f6a2;
+  color: #16e916;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input::-webkit-input-placeholder {
+  color: #73f273;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input:-ms-input-placeholder {
+  color: #73f273;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input::-ms-input-placeholder {
+  color: #73f273;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input::placeholder {
+  color: #73f273;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input:focus, .modal-shadow .container .form-box.active .signUp-form form .form-group input:active {
+  border: 1px solid #16e916;
+  -webkit-box-shadow: 0 0 2px 1px #16e916;
+          box-shadow: 0 0 2px 1px #16e916;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input[type="submit"] {
+  background: #16e916;
+  color: #fff;
+}
+
+.modal-shadow .container .form-box.active .signUp-form form .form-group input[type="submit"]:hover, .modal-shadow .container .form-box.active .signUp-form form .form-group input[type="submit"]:focus {
+  background: #11bb11;
+}
+
+@media screen and (max-width: 991px) {
+  .modal-shadow .container {
+    max-width: 400px;
+    height: 650px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .modal-shadow .container .blueBG {
+    top: 0;
+    height: 100%;
+  }
+  .modal-shadow .container .blueBG .box {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    bottom: 0;
+  }
+  .modal-shadow .container .blueBG .box.signIn {
+    top: 0;
+  }
+  .modal-shadow .container .form-box {
+    width: 100%;
+    height: 500px;
+    top: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .modal-shadow .container .form-box.active {
+    left: 0;
+    top: 150px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
