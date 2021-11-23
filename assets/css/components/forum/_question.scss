@@ -1,0 +1,128 @@
+.question-viewer {
+    background: hsl(120, 83%, 95%);
+    border-radius: 4px;
+    padding: 3rem 1rem 2rem;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: hsl(120, 83%, 30%);
+    }
+
+    p {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: hsl(120, 83%, 30%);
+    }
+
+    .user {
+        color: hsl(120, 83%, 50%);
+        border-top: 1px solid hsl(120, 83%, 50%);
+        padding: 1rem 0;
+
+        span {
+            color: hsl(120, 83%, 30%);
+            font-weight: bolder;
+        }
+    }
+}
+
+.answer-form {
+    padding-block: 3rem;
+
+    form {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+
+        .form-group {
+            width: 100%;
+        }
+
+        label {
+            font-size: 1.5rem;
+            text-transform: capitalize;
+            font-weight: normal;
+        }
+
+        .answer-description {
+            border: none;
+            outline: none;
+            border-radius: 0.5rem;
+
+            width: 100%;
+            padding: 1rem 0.5rem;
+            font-size: 1.5rem;
+            border: 1px solid hsl(120, 83%, 80%);
+            color: hsl(120, 83%, 30%);
+            resize: vertical;
+
+            &::placeholder {
+                color: rgb(23, 233, 23);
+            }
+            &:focus,
+            &:active {
+                border: none;
+                box-shadow: 0 0 2px 1px rgb(23, 233, 23);
+            }
+        }
+
+        .answer-button {
+            border: none;
+            outline: none;
+            background: rgb(23, 233, 23);
+            border-radius: 0.5rem;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                background: hsl(120, 83%, 40%);
+            }
+        }
+    }
+}
+
+.answers-container {
+    h1 {
+        font-size: 2rem;
+        font-weight: normal;
+        text-align: center;
+        border-top: 0.1rem solid rgb(23, 223, 23);
+        padding: 2rem 1rem;
+    }
+
+    .answer {
+        margin-block: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .answer-content {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+
+            p {
+                font-size: 1.4rem;
+                color: hsl(120, 83%, 30%);
+            }
+
+            .answer-footer {
+                padding-top: 1rem;
+
+                p {
+                    color: hsl(120, 83%, 50%);
+                    span {
+                        font-size: 1.2rem;
+                        color: hsl(120, 83%, 30%);
+                        font-weight: bolder;
+                    }
+                }
+            }
+        }
+    }
+}

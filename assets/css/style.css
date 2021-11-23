@@ -752,4 +752,154 @@ header #menu {
 .forum-container .questions-container .question .question-content:hover {
   background: #e8fde8;
 }
+
+.question-viewer {
+  background: #e8fde8;
+  border-radius: 4px;
+  padding: 3rem 1rem 2rem;
+}
+
+.question-viewer h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #0d8c0d;
+}
+
+.question-viewer p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #0d8c0d;
+}
+
+.question-viewer .user {
+  color: #16e916;
+  border-top: 1px solid #16e916;
+  padding: 1rem 0;
+}
+
+.question-viewer .user span {
+  color: #0d8c0d;
+  font-weight: bolder;
+}
+
+.answer-form {
+  padding-block: 3rem;
+}
+
+.answer-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.answer-form form .form-group {
+  width: 100%;
+}
+
+.answer-form form label {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-weight: normal;
+}
+
+.answer-form form .answer-description {
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  border: 1px solid #a2f6a2;
+  color: #0d8c0d;
+  resize: vertical;
+}
+
+.answer-form form .answer-description::-webkit-input-placeholder {
+  color: #17e917;
+}
+
+.answer-form form .answer-description:-ms-input-placeholder {
+  color: #17e917;
+}
+
+.answer-form form .answer-description::-ms-input-placeholder {
+  color: #17e917;
+}
+
+.answer-form form .answer-description::placeholder {
+  color: #17e917;
+}
+
+.answer-form form .answer-description:focus, .answer-form form .answer-description:active {
+  border: none;
+  -webkit-box-shadow: 0 0 2px 1px #17e917;
+          box-shadow: 0 0 2px 1px #17e917;
+}
+
+.answer-form form .answer-button {
+  border: none;
+  outline: none;
+  background: #17e917;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+}
+
+.answer-form form .answer-button:hover, .answer-form form .answer-button:focus {
+  background: #11bb11;
+}
+
+.answers-container h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  border-top: 0.1rem solid #17df17;
+  padding: 2rem 1rem;
+}
+
+.answers-container .answer {
+  margin-block: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.answers-container .answer .answer-content {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.answers-container .answer .answer-content p {
+  font-size: 1.4rem;
+  color: #0d8c0d;
+}
+
+.answers-container .answer .answer-content .answer-footer {
+  padding-top: 1rem;
+}
+
+.answers-container .answer .answer-content .answer-footer p {
+  color: #16e916;
+}
+
+.answers-container .answer .answer-content .answer-footer p span {
+  font-size: 1.2rem;
+  color: #0d8c0d;
+  font-weight: bolder;
+}
 /*# sourceMappingURL=style.css.map */

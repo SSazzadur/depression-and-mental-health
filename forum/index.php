@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php require('./components/_nav.php') ?>
+    <?php include './components/_nav.php' ?>
     <section>
         <div class="search">
             <form action="./search.php">
@@ -52,7 +52,7 @@
                                 alt="userlogo" width="65px">
                         </div>
                         <div class="question-content">
-                            <a href="#">
+                            <a href="./question.php">
                                 <h3>How to install PHP on Ubuntu?</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
 
@@ -85,7 +85,7 @@
             </div>
     </section>
 
-    <?php require('./components/_footer.php') ?>
+    <?php include './components/_footer.php' ?>
 
     <script src="../assets/js/app.js"></script>
 </body>

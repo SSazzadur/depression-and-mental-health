@@ -19,11 +19,11 @@
         <div class="box">
             <h3>Quick links</h3>
             <div class="links">
-                <a href="#home">Home</a>
-                <a href="#introduction">Introduction</a>
-                <a href="#casestudy">Case Study</a>
-                <a href="#futurework">Future Work</a>
-                <a href="#conclusion">Conclusion</a>
+                <a href="/clg-internship/#home">Home</a>
+                <a href="/clg-internship/#introduction">Introduction</a>
+                <a href="/clg-internship/#casestudy">Case Study</a>
+                <a href="/clg-internship/#futurework">Future Work</a>
+                <a href="/clg-internship/#conclusion">Conclusion</a>
             </div>
         </div>
 
