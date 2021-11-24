@@ -7,7 +7,7 @@ const signUpBtn = document.querySelector(".signUp-btn");
 const formBox = document.querySelector(".form-box");
 const modalShadow = document.querySelector(".modal-shadow");
 
-const openBtn = document.querySelector(".modal-open");
+const openBtns = document.querySelectorAll(".modal-open");
 const closeBtn = document.querySelector(".close-btn");
 
 menu.addEventListener("click", () => {
@@ -22,25 +22,34 @@ navItems.forEach(item => {
     });
 });
 
-openBtn.addEventListener("click", () => {
-    modalShadow.style.opacity = "1";
-    modalShadow.style.pointerEvents = "all";
+if (openBtns) {
+    openBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            modalShadow.style.opacity = "1";
+            modalShadow.style.pointerEvents = "all";
 
-    document.body.style.overflow = "hidden";
-});
-closeBtn.addEventListener("click", () => {
-    modalShadow.style.opacity = "0";
-    modalShadow.style.pointerEvents = "none";
+            document.body.style.overflow = "hidden";
+        });
+    });
+}
 
-    document.body.style.overflow = "auto";
-});
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        modalShadow.style.opacity = "0";
+        modalShadow.style.pointerEvents = "none";
 
-signUpBtn.addEventListener("click", () => {
-    formBox.classList.add("active");
-    modalShadow.classList.add("active");
-});
+        document.body.style.overflow = "auto";
+    });
+}
 
-signInBtn.addEventListener("click", () => {
-    formBox.classList.remove("active");
-    modalShadow.classList.remove("active");
-});
+if (signInBtn && signUpBtn) {
+    signUpBtn.addEventListener("click", () => {
+        formBox.classList.add("active");
+        modalShadow.classList.add("active");
+    });
+
+    signInBtn.addEventListener("click", () => {
+        formBox.classList.remove("active");
+        modalShadow.classList.remove("active");
+    });
+}

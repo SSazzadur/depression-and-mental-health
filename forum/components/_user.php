@@ -16,7 +16,7 @@
         </div>
         <div class="form-box">
             <div class="form signIn-form">
-                <form>
+                <form action="./components/_loginHandler.php" method="POST">
                     <h1>Login to your account</h1>
 
                     <div class="form-group">

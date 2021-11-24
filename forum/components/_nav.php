@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
+    $loggedIn = true;
+} else {
+    $loggedIn = false;
+}
+?>
+
 <header>
     <a href="/clg-internship" class="logo">College <span>INTERNSHIP</span></a>
 
@@ -14,5 +23,11 @@
         <a href="/clg-internship/#futurework">Futurework</a>
         <a href="/clg-internship/#conclusion">Conclusion</a>
         <a href="/clg-internship/forum">Forum</a>
+        <?php
+        if ($loggedIn) echo '<a href="./components/_logoutHandler.php">Logout</a>';
+        else echo '<a href="javascript:void(0)" class="modal-open">Login</a>';
+        ?>
+
+
     </nav>
 </header>

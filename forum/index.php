@@ -1,6 +1,7 @@
 <?php
+session_start();
 $loggedIn = false;
-if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
     $loggedIn = true;
 }
 ?>
@@ -55,10 +56,6 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
                        <button class="modal-open">Login</button>
                    </div>';
             ?>
-
-
-
-            <!-- temporary modal button -->
 
             <div class="questions-container">
                 <h1>Browse your related questions</h1>

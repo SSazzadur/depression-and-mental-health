@@ -1,7 +1,9 @@
 <?php
-$loggedIn = false;
-if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+session_start();
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
     $loggedIn = true;
+} else {
+    $loggedIn = false;
 }
 ?>
 

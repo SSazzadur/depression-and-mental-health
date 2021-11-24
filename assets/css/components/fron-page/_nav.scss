@@ -55,6 +55,7 @@ header {
 
             &:hover::before {
                 transform: scaleX(1);
+                transform-origin: right;
             }
         }
     }
@@ -88,8 +89,8 @@ header {
                 margin: 1.5rem 0;
                 font-size: 2rem;
                 opacity: 0;
-                // transform: translateX(-100%);
                 transform-origin: left;
+                cursor: pointer;
             }
         }
 

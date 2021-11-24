@@ -133,6 +133,8 @@ header .navbar a::before {
 header .navbar a:hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
 header #menu {
@@ -171,6 +173,7 @@ header #menu {
     opacity: 0;
     -webkit-transform-origin: left;
             transform-origin: left;
+    cursor: pointer;
   }
   header .nav-toggle {
     -webkit-transform: scaleY(1);
