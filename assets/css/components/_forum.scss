@@ -1,3 +1,28 @@
+.not-logged-in {
+    text-transform: capitalize;
+    font-weight: normal;
+    margin-block: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .modal-open {
+        border: none;
+        outline: none;
+        background: rgb(23, 233, 23);
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background: hsl(120, 83%, 40%);
+        }
+    }
+}
+
 @import "./forum/search";
 @import "./forum/forum-container";
 @import "./forum/question";

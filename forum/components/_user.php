@@ -21,11 +21,11 @@
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Enter email">
+                        <input type="email" id="email" name="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Password">
+                        <input type="password" id="password" name="password" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Login" />
@@ -34,23 +34,23 @@
             </div>
 
             <div class="form signUp-form">
-                <form>
+                <form action="./components/_signupHandler.php" method="POST">
                     <h1>Register your account</h1>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Enter name">
+                        <input type="text" id="name" name="name" placeholder="Enter name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Enter email">
+                        <input type="email" id="email" name="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" placeholder="Password">
+                        <input type="password" id="password" name="password" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <label for="password">Confirm Password</label>
-                        <input type="password" id="password" placeholder="Confirm Password">
+                        <label for="cpassword">Confirm Password</label>
+                        <input type="password" id="cpassword" name="cpassword" placeholder="Confirm Password">
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Sign Up" />

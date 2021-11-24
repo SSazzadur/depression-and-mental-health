@@ -485,6 +485,33 @@ header #menu {
   }
 }
 
+.not-logged-in {
+  text-transform: capitalize;
+  font-weight: normal;
+  margin-block: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.not-logged-in .modal-open {
+  border: none;
+  outline: none;
+  background: #17e917;
+  border-radius: 0.5rem;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.not-logged-in .modal-open:hover, .not-logged-in .modal-open:focus {
+  background: #11bb11;
+}
+
 .search {
   padding-block: 3rem;
   border-radius: 0.5rem;

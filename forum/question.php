@@ -1,8 +1,10 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "Annswer posted";
+$loggedIn = false;
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+    $loggedIn = true;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <?php include './components/_user.php' ?>
     <?php include './components/_nav.php' ?>
 
     <section>
@@ -27,17 +30,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 Asked By: <span>User Name</span>
             </p>
         </div>
+        <?php
+        echo $loggedIn ? '<div class="answer-form">
+                            <form action="/clg-internship/forum/question.php" method="POST">
+                                <div class="form-group">
+                                    <label for="description"> Write Your Answer</label>
+                                    <textarea name="content" id="description" class="answer-description"></textarea>
+                                </div>
+                                <input type="text" value="1" hidden>
+                                <button type="submit" class="answer-button">POST</button>
+                            </form>
+                          </div>'
+            : '<div class="not-logged-in">
+                    <h1>You are not logged in. Please login to post questions!</h1>
+                    <button class="modal-open">Login</button>
+                </div>'
+        ?>
 
-        <div class="answer-form">
-            <form action="/clg-internship/forum/question.php" method="POST">
-                <div class="form-group">
-                    <label for="description"> Write Your Answer</label>
-                    <textarea name="content" id="description" class="answer-description"></textarea>
-                </div>
-                <input type="text" value="1" hidden>
-                <button type="submit" class="answer-button">POST</button>
-            </form>
-        </div>
 
 
         <div class="answers-container">

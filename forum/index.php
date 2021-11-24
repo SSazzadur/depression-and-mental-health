@@ -1,3 +1,10 @@
+<?php
+$loggedIn = false;
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
+    $loggedIn = true;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,23 +35,30 @@
                 </div>
             </div>
 
-            <div class="question-form">
-                <form action="/clg-internship/forum/" method="POST">
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" id="title" class="question-title">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea name="content" id="description" class="question-description"></textarea>
-                    </div>
-                    <input type="text" value="1" hidden>
-                    <button type="submit" class="question-button">POST</button>
-                </form>
-            </div>
+            <?php
+            echo $loggedIn ? '<div class="question-form">
+                    <form action="/clg-internship/forum/" method="POST">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" class="question-title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="content" id="description" class="question-description"></textarea>
+                        </div>
+                        <input type="text" value="1" hidden>
+                        <button type="submit" class="question-button">POST</button>
+                    </form>
+                </div>'
+                : '<div class="not-logged-in">
+                       <h1>You are not logged in. Please login to post questions!</h1>
+                       <button class="modal-open">Login</button>
+                   </div>';
+            ?>
+
+
 
             <!-- temporary modal button -->
-            <button class="modal-open">Login</button>
 
             <div class="questions-container">
                 <h1>Browse your related questions</h1>
