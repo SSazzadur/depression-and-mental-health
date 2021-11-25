@@ -1,9 +1,35 @@
+<?php include './components/_dbConnect.php'; ?>
+
 <?php
 session_start();
 $loggedIn = false;
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
     $loggedIn = true;
 }
+?>
+
+<?php
+$showAlert = false;
+$showError = false;
+$alertMessage = "";
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $q_title = $_POST['title'];
+    $q_desc = $_POST['description'];
+    $u_id = $_SESSION['userid'];
+
+    $sql = "INSERT INTO questions (`q_title`, `q_desc`, `u_id`, `timestamp`) VALUES ('$q_title', '$q_desc', '$u_id', current_timestamp()) ORDER BY a.timestamp DESC;";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $showAlert = true;
+        $alertMessage = "Question added successfully!";
+    } else {
+        $showError = true;
+        $alertMessage = "Error adding question!";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,9 +71,8 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <textarea name="content" id="description" class="question-description"></textarea>
+                            <textarea name="description" id="description" class="question-description"></textarea>
                         </div>
-                        <input type="text" value="1" hidden>
                         <button type="submit" class="question-button">POST</button>
                     </form>
                 </div>'
@@ -61,40 +86,42 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
                 <h1>Browse your related questions</h1>
 
                 <div class="questions-container">
-                    <div class="question">
-                        <div class="img-container">
-                            <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
-                                alt="userlogo" width="65px">
-                        </div>
-                        <div class="question-content">
-                            <a href="./question.php">
-                                <h3>How to install PHP on Ubuntu?</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
 
-                                <div class="question-footer">
-                                    <p>Asked by <span>John Doe</span></p>
-                                    <p>2 Answers</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <div class="img-container">
-                            <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
-                                alt="userlogo" width="65px">
-                        </div>
-                        <div class="question-content">
-                            <a href="#">
-                                <h3>How to install PHP on Ubuntu?</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                    <?php
+                    $sql2 = "SELECT * FROM questions q LEFT JOIN users u ON q.u_id=u.u_id;";
+                    $result2 = mysqli_query($conn, $sql2);
+                    $noResult = true;
 
-                                <div class="question-footer">
-                                    <p>Asked by <span>John Doe</span></p>
-                                    <p>2 Answers</p>
+                    while ($row = mysqli_fetch_assoc($result2)) {
+                        $noResult = false;
+                        echo '<div class="question">
+                                <div class="img-container">
+                                    <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
+                                        alt="userlogo" width="65px">
                                 </div>
-                            </a>
-                        </div>
-                    </div>
+                                <div class="question-content">
+                                    <a href="./question.php?q_id=' . $row["q_id"] . '">
+                                        <h3>' . $row["q_title"] . '</h3>
+                                        <p>' . $row["q_desc"] . '</p>
+
+                                        <div class="question-footer">
+                                            <p>Asked by <span>' . $row['u_name'] . '</span></p>
+                                        </div>
+                                    </a>
+                                </div>  
+                              </div>';
+                    }
+
+                    if ($noResult) {
+                        echo '<div class="no-result">
+                                <h1>There is no questions here.</h1>
+                                <p>
+                                    <b>Be the first person to ask a question!</b>
+                                </p>
+                              </div>';
+                    }
+
+                    ?>
 
                 </div>
             </div>

@@ -18,10 +18,6 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
 
     <nav class="navbar">
         <a href="/clg-internship/">Home</a>
-        <a href="/clg-internship/#introduction">Introduction</a>
-        <a href="/clg-internship/#casestudy">Case Study</a>
-        <a href="/clg-internship/#futurework">Futurework</a>
-        <a href="/clg-internship/#conclusion">Conclusion</a>
         <a href="/clg-internship/forum">Forum</a>
         <?php
         if ($loggedIn) echo '<a href="./components/_logoutHandler.php">Logout</a>';

@@ -1,3 +1,5 @@
+<?php include './components/_dbConnect.php' ?>
+
 <?php
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
@@ -6,6 +8,31 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
     $loggedIn = false;
 }
 ?>
+
+<?php
+$shoAlert = false;
+$showError = false;
+$alertMessage = "";
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $answer = $_POST['answer'];
+    $q_id = $_GET['q_id'];
+    $u_id = $_SESSION['userid'];
+
+    $sql = "INSERT INTO answers (`answer`, `q_id`, `u_id`, `timestamp`) VALUES ('$answer', '$q_id', '$u_id', current_timestamp());";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result) {
+        $shoAlert = true;
+        $alertMessage = "Answer submitted successfully!";
+    } else {
+        $showError = true;
+        $alertMessage = "Error submitting answer!";
+    }
+}
+
+?>
+
 
 
 <!DOCTYPE html>
@@ -25,62 +52,77 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
 
     <section>
         <div class="question-viewer">
-            <h1>Question Title</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic ipsam itaque repellat voluptas deserunt at
-                libero quidem, a id ab harum recusandae vel magnam nisi nesciunt doloremque sapiente quam fugit.</p>
-            <p class="user">
-                Asked By: <span>User Name</span>
-            </p>
-        </div>
-        <?php
-        echo $loggedIn ? '<div class="answer-form">
-                            <form action="/clg-internship/forum/question.php" method="POST">
+            <?php
+            $q_id = $_GET["q_id"];
+            $sql = "SELECT * FROM questions q LEFT JOIN users u ON q.u_id=u.u_id WHERE q.q_id='$q_id';";
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+
+            $q_title = $row['q_title'];
+            $q_desc = $row['q_desc'];
+            $u_name = $row['u_name'];
+
+            echo "<h1>$q_title</h1>";
+            echo "<p>$q_desc</p>";
+            echo '<p class="user">
+                    Asked By: <span>' . $u_name . '</span>
+                 </p>';
+            echo "</div>";
+            ?>
+            <?php
+            echo $loggedIn ? '<div class="answer-form">
+                            <form action="/clg-internship/forum/question.php?q_id=' . $q_id . '" method="POST">
                                 <div class="form-group">
-                                    <label for="description"> Write Your Answer</label>
-                                    <textarea name="content" id="description" class="answer-description"></textarea>
+                                    <label for="answer"> Write Your Answer</label>
+                                    <textarea name="answer" id="answer" class="answer-description"></textarea>
                                 </div>
-                                <input type="text" value="1" hidden>
                                 <button type="submit" class="answer-button">POST</button>
                             </form>
                           </div>'
-            : '<div class="not-logged-in">
+                : '<div class="not-logged-in">
                     <h1>You are not logged in. Please login to post questions!</h1>
                     <button class="modal-open">Login</button>
                 </div>'
-        ?>
+            ?>
 
 
 
-        <div class="answers-container">
-            <h1>Answers to the question</h1>
+            <div class="answers-container">
+                <h1>Answers of the question</h1>
+                <?php echo $alertMessage; ?>
+                <?php
+                $q_id = $_GET['q_id'];
 
-            <div class="answer">
-                <div class="img-container">
-                    <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
-                        alt="userlogo" width="65px">
-                </div>
-                <div class="answer-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+                $sql = "SELECT * FROM answers a LEFT JOIN users u ON a.u_id=u.u_id WHERE a.q_id='$q_id' ORDER BY a.timestamp DESC;";
+                $result = mysqli_query($conn, $sql);
+                $noResult = true;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $noResult = false;
+                    $answer = $row['answer'];
+                    $u_name = $row['u_name'];
 
-                    <div class="answer-footer">
-                        <p>Answered by <span>John Doe</span></p>
-                    </div>
-                </div>
+                    echo '<div class="answer">
+                            <div class="img-container">
+                                <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
+                                    alt="userlogo" width="65px">
+                            </div>
+                            <div class="answer-content">
+                                <p>' . $answer . '</p>
+
+                                <div class="answer-footer">
+                                    <p>Answered by <span>' . $u_name . '</span></p>
+                                </div>
+                            </div>
+                        </div>';
+                }
+                if ($noResult) {
+                    echo '<div class="no-result">
+                            <h1>No answers yet!</h1>
+                            <p>Be the first to answer this question!</p>
+                        </div>';
+                }
+                ?>
             </div>
-            <div class="answer">
-                <div class="img-container">
-                    <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
-                        alt="userlogo" width="65px">
-                </div>
-                <div class="answer-content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-
-                    <div class="answer-footer">
-                        <p>Answered by <span>John Doe</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </section>
 

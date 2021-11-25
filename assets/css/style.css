@@ -726,7 +726,7 @@ header #menu {
   font-weight: normal;
   text-align: center;
   border-top: 0.1rem solid #17df17;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 .forum-container .questions-container .question {
@@ -781,6 +781,16 @@ header #menu {
 
 .forum-container .questions-container .question .question-content:hover {
   background: #e8fde8;
+}
+
+.forum-container .questions-container .no-result h1 {
+  text-align: left;
+  border: none;
+}
+
+.forum-container .questions-container .no-result p {
+  font-size: 1.2rem;
+  color: #0d8c0d;
 }
 
 .question-viewer {
@@ -894,7 +904,7 @@ header #menu {
   font-weight: normal;
   text-align: center;
   border-top: 0.1rem solid #17df17;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 .answers-container .answer {
@@ -931,6 +941,16 @@ header #menu {
   font-size: 1.2rem;
   color: #0d8c0d;
   font-weight: bolder;
+}
+
+.answers-container .no-result h1 {
+  text-align: left;
+  border: none;
+}
+
+.answers-container .no-result p {
+  font-size: 1.2rem;
+  color: #0d8c0d;
 }
 
 .modal-shadow {

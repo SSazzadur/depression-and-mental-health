@@ -103,7 +103,7 @@
             font-weight: normal;
             text-align: center;
             border-top: 0.1rem solid rgb(23, 223, 23);
-            padding: 2rem 1rem;
+            padding: 2rem 0;
         }
 
         .question {
@@ -149,6 +149,18 @@
                 &:hover {
                     background: hsl(120, 83%, 95%);
                 }
+            }
+        }
+
+        .no-result {
+            h1 {
+                text-align: left;
+                border: none;
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: hsl(120, 83%, 30%);
             }
         }
     }
