@@ -23,11 +23,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if ($result) {
         $showAlert = true;
+        $showError = false;
         $alertMessage = "Question added successfully!";
     } else {
         $showError = true;
+        $showAlert = false;
         $alertMessage = "Error adding question!";
     }
+}
+
+
+if (isset($_GET['signupsuccess']) && $_GET['signupsuccess'] == 'true') {
+    $showAlert = true;
+    $showError = false;
+    $alertMessage = "Signup successful! Please login to continue.";
+} else if (isset($_GET['signupsuccess']) && $_GET['signupsuccess'] == 'false') {
+    $showError = true;
+    $showAlert = false;
+    $alertMessage = $_GET['error'];
+}
+
+if (isset($_GET['error'])) {
+    $showError = true;
+    $showAlert = false;
+    $alertMessage = $_GET['error'];
 }
 
 ?>
@@ -47,6 +66,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <?php include './components/_user.php' ?>
     <?php include './components/_nav.php' ?>
     <section>
+        <div class="alert-container">
+            <?php if ($showAlert) { ?>
+            <div class="alert alert-success">
+                <p>
+                    <?php echo $alertMessage; ?>
+                </p>
+
+                <div class="alert-close">
+                    &times;
+                </div>
+            </div>
+            <?php } else if ($showError) { ?>
+            <div class="alert alert-error">
+                <p>
+                    <?php echo $alertMessage; ?>
+                </p>
+
+                <div class="alert-close">
+                    &times;
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+
         <div class="search">
             <form action="./search.php">
                 <input type="text" name="search" placeholder="Search" class="search-input">

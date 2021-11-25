@@ -515,6 +515,58 @@ header #menu {
   background: #11bb11;
 }
 
+.alert-container .alert {
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alert-container .alert p {
+  font-size: 1.3rem;
+}
+
+.alert-container .alert .alert-close {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+}
+
+.alert-container .alert.alert-success {
+  background: #d0fbd0;
+}
+
+.alert-container .alert.alert-success .alert-close {
+  background-color: #16e916;
+}
+
+.alert-container .alert.alert-success .alert-close:hover {
+  background-color: #44ee44;
+}
+
+.alert-container .alert.alert-error {
+  background: #fbd0d0;
+}
+
+.alert-container .alert.alert-error .alert-close {
+  background-color: #e91616;
+}
+
+.alert-container .alert.alert-error .alert-close:hover {
+  background-color: #ee4444;
+}
+
 .search {
   padding-block: 3rem;
   border-radius: 0.5rem;

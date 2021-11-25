@@ -10,6 +10,9 @@ const modalShadow = document.querySelector(".modal-shadow");
 const openBtns = document.querySelectorAll(".modal-open");
 const closeBtn = document.querySelector(".close-btn");
 
+const alert = document.querySelector(".alert");
+const closeAlert = document.querySelector(".alert-close");
+
 menu.addEventListener("click", () => {
     navbar.classList.toggle("nav-toggle");
     menu.classList.toggle("active");
@@ -51,5 +54,11 @@ if (signInBtn && signUpBtn) {
     signInBtn.addEventListener("click", () => {
         formBox.classList.remove("active");
         modalShadow.classList.remove("active");
+    });
+}
+
+if (closeAlert) {
+    closeAlert.addEventListener("click", () => {
+        alert.style.display = "none";
     });
 }

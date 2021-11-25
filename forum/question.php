@@ -10,7 +10,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
 ?>
 
 <?php
-$shoAlert = false;
+$showAlert = false;
 $showError = false;
 $alertMessage = "";
 
@@ -23,10 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        $shoAlert = true;
+        $showAlert = true;
+        $showError = false;
         $alertMessage = "Answer submitted successfully!";
     } else {
         $showError = true;
+        $showAlert = false;
         $alertMessage = "Error submitting answer!";
     }
 }
@@ -51,6 +53,29 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <?php include './components/_nav.php' ?>
 
     <section>
+        <div class="alert-container">
+            <?php if ($showAlert) { ?>
+            <div class="alert alert-success">
+                <p>
+                    <?php echo $alertMessage; ?>
+                </p>
+
+                <div class="alert-close">
+                    &times;
+                </div>
+            </div>
+            <?php } else if ($showError) { ?>
+            <div class="alert alert-error">
+                <p>
+                    <?php echo $alertMessage; ?>
+                </p>
+
+                <div class="alert-close">
+                    &times;
+                </div>
+            </div>
+            <?php } ?>
+        </div>
         <div class="question-viewer">
             <?php
             $q_id = $_GET["q_id"];
@@ -85,11 +110,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 </div>'
             ?>
 
-
-
             <div class="answers-container">
                 <h1>Answers of the question</h1>
-                <?php echo $alertMessage; ?>
                 <?php
                 $q_id = $_GET['q_id'];
 
