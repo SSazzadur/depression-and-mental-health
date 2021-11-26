@@ -19,17 +19,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $q_id = $_GET['q_id'];
     $u_id = $_SESSION['userid'];
 
-    $sql = "INSERT INTO answers (`answer`, `q_id`, `u_id`, `timestamp`) VALUES ('$answer', '$q_id', '$u_id', current_timestamp());";
-    $result = mysqli_query($conn, $sql);
+    if (!empty($answer)) {
 
-    if ($result) {
-        $showAlert = true;
-        $showError = false;
-        $alertMessage = "Answer submitted successfully!";
+        $sql = "INSERT INTO answers (`answer`, `q_id`, `u_id`, `timestamp`) VALUES ('$answer', '$q_id', '$u_id', current_timestamp());";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            $showAlert = true;
+            $showError = false;
+            $alertMessage = "Answer submitted successfully!";
+        } else {
+            $showError = true;
+            $showAlert = false;
+            $alertMessage = "Error submitting answer!";
+        }
     } else {
         $showError = true;
         $showAlert = false;
-        $alertMessage = "Error submitting answer!";
+        $alertMessage = "Please enter an answer!";
     }
 }
 

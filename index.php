@@ -26,7 +26,7 @@
             <a href="#home">Home</a>
             <a href="#introduction">Introduction</a>
             <a href="#casestudy">Case Study</a>
-            <a href="#futurework">Futurework</a>
+            <a href="#explanation">Explanation</a>
             <a href="#conclusion">Conclusion</a>
             <a href="/clg-internship/forum">Forum</a>
         </nav>
@@ -43,16 +43,44 @@
     <section class="introduction" id="introduction">
         <h1 class="heading">Introduction</h1>
         <div class="row">
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Voluptatibus, repudiandae aspernatur eum minus accusamus
-                eligendi delectus ad? Similique, facilis esse? Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Accusantium
-                numquam saepe sequi fugiat in? Inventore ad tempore, rerum
-                laboriosam officia nobis repellendus commodi nemo!
-                Laboriosam blanditiis cumque repellendus autem a
-            </p>
-            <img src="./assets/images/dep2.jpg" alt="" />
+            <div class="content" style="text-align: justify;">
+                <p>
+                    Here we are going to discuss about one of the most underrated topic of the society which is nothing
+                    but
+                    Depression & Mental Health. Nobody wants to share or discuss this topic even if they want to do so,
+                    they
+                    can’t as people in the society doesn’t give so much importance to it and many of them are unaware of
+                    it.
+                    It can happen to anyone from a billionaire to a farmer, from a Student to a labor. Everyone feels
+                    down
+                    at times. As example for a billionaire the loss in business might effect on the mental health,
+                    causing
+                    depression, likewise for a student bad grade, for a labor heavy workload & less salary, for a former
+                    not
+                    getting the proper price of his farming etc.
+                </p>
+                <br>
+                <p>
+                    There are many more example also in general like the breakup of a relationship can lead to low mood.
+                    Death of a very close person can also effect on the mental health. Sometimes sadness comes on for no
+                    apparent reason. Depression, versus ordinary unhappiness, is characterized by longer and deeper
+                    feelings
+                    of despondency and the presence of certain characteristic symptoms.
+                </p>
+                <br>
+                <p>
+                    This distinction is important, because in severe cases, depression can be life threatening, with
+                    suicide
+                    as a possible outcome. Depressed people may also fail to live up to their potential, doing poorly in
+                    school and staying on the social margins. Depression is frequently ignored or untreated; the
+                    condition
+                    often prevents people from taking steps to help themselves. This is unfortunate, as effective help
+                    is
+                    available. So we can say that depression leads to decrease the stability of the mental health
+                    causing
+                    guaranteed bad result.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -63,285 +91,166 @@
             <div class="box">
                 <h3>Identification of Problem</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    The National Institute of Mental Health (NIMH) explains some of the major symptoms of depression and
+                    its presentation. Symptoms can come in Emotional, Mental and Physical forms.
                 </p>
             </div>
 
             <div class="box">
-                <h3>relevent for the society</h3>
+                <h3>Relevent for the Society</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    The problem relevant for the society because Depression and Mental Health can impact every area of
+                    our life, including but not limited to how we sleep and eat, our education and career,
+                    relationships, health and Concentration.
                 </p>
             </div>
 
             <div class="box">
-                <h3>already existing Solutions</h3>
+                <h3>Already existing Solutions</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    There are many existing solutions for the problem of depression.
+                </p>
+                <p>
+                    Here are some of common solutions for deperession: Medication, Therapy, Meditation.
                 </p>
             </div>
 
             <div class="box">
                 <h3>Proposed Solutions</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    When it comes to depression specifically, technology has lot of advantages.
+                    Let's start with a morning conversation with a digital assistant like alexa or siri...
+                </p>
+                <p>
+                    Me: Hi, Alexa. <br>
+                    Alexa: Good morning, how are you?<br>
+                    Me: I am fine, how are you? <br>
+                    ...........................
+                </p>
+                <p>
+                    So we can say that technology can help us to overcome the problem of depression.
                 </p>
             </div>
 
             <div class="box">
                 <h3>Efficiency of Proposed Solutions</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    Our key Proposed Solution are mainlky based upon technology those are building application,
+                    developing devices using Artificial Intelligence.
+                </p>
+                <p>
+                    Our Proposed solution will solve the problems of mental illness for sure but there are yet few
+                    rules which we have to follow. Otherwise it may come again...
+                </p>
+                <p>
+                    These are: strict to your treatment plan, learn about depression, pay attention to warning signs,
+                    avoid alcohol and drugs and take care of your body.
                 </p>
             </div>
 
             <div class="box">
-                <h3>impact on Environment</h3>
+                <h3>Impact of Proposed Solutions</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    As per the Problem of 'Depression and Mental Health', the Technical Solutions Selected by i.e.,
+                    building apps and using A.I. won't have any kind of impact on our Environment and Nature in nor
+                    Positive way, neither Negative way.
                 </p>
-            </div>
-
-            <div class="box">
-                <h3>Novelty & Uniqueness</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
-                </p>
-            </div>
-
-            <div class="box">
-                <h3>Objective of Proposed Solutions</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
-                </p>
-            </div>
-
-            <div class="box">
-                <h3>Goals & Milestones</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
-                </p>
-            </div>
-
-            <div class="box">
-                <h3>planning and execution</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
-                </p>
-            </div>
-
-            <div class="box">
-                <h3>Analysis to Society</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    As we knmow that that the works of a Computer Science Engineer is mainly executed on Computers,
+                    Gadgets and Softwares, so there is no chance of any negative impact on our Environment and Nature.
                 </p>
             </div>
 
             <div class="box">
                 <h3>Proposed Roadmap</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    As we have sorted out the 2 solutions regarding the problem, 'Depression and Mental Health'. So
+                    planning and execution Strategy of such solutions can be as follows:
                 </p>
-            </div>
-
-            <div class="box">
-                <h3>Expiry Date of the Solutions</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
-                </p>
-            </div>
-
-            <div class="box">
-                <h3>Forecasting of the Social Changes</h3>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Voluptatibus, repudiandae aspernatur eum minus
-                    accusamus eligendi delectus ad? Similique, facilis esse?
+                    a) Using Computer Languages we can build some apps where there is live interaction between the
+                    individual and various Psychiatrists. <br>
+                    b) Using Artificial Intelligence we can develop some devices which can be used to measure the level
+                    of Stress, Anxiety, etc. via face expressions.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="futurework" id="futurework">
-        <h1 class="heading">futurework</h1>
-
+    <section class="futurework" id="explanation">
+        <h1 class="heading">Explanation</h1>
         <div class="column">
             <div class="box-container">
                 <div class="box">
-                    <h3>Self-Management apps.</h3>
+                    <h3 style="text-align: left;">Present State</h3>
+                    <p style="text-align: justify;">
+                        Here we are going to discuss about one of the most underrated topic of the society which is
+                        nothing but Depression and Mental Health.
+                        Basically we have created a website 'Depression and Mental Health'. It helps people to know
+                        description of depression and mental health.
+                        The main points to talk about Introduction, Case Study, Futurework and Conclusion.
+                    </p>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
+                        In our website we have created a Forum where people can interact with each other. When someone
+                        post their problem others can come with the soltuion to the problem.
                     </p>
                 </div>
 
                 <div class="box">
-
-                    <h3>Apps for improving thinking skills</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
+                    <h3 style="text-align: left;">In Future</h3>
+                    <p style="text-align: justify;">
+                        In future we are thinking to upgrade more features like audio call and video call facilities.
+                        As well as we are also thinking of making a application along with this website which will be
+                        made available in the playstore and can be download from it.
                     </p>
                 </div>
             </div>
 
-            <div class="box-container">
-                <div class="box">
-
-                    <h3>convenience</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>Anonymity</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>An introduction to care</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>Lower cost</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>Service to more people</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>Interest</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>24-hour service</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>Consistency</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>Support</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-
-                <div class="box">
-
-                    <h3>Objective data collection</h3>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur
-                        adipisicing elit. Vel odit quo saepe illum
-                        tempora corrupti sint distinctio, perferendis
-                        maxime illo!
-                    </p>
-                </div>
-            </div>
+        </div>
         </div>
     </section>
 
     <section class="introduction" id="conclusion">
         <h1 class="heading">Conclusion</h1>
         <div class="row">
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Voluptatibus, repudiandae aspernatur eum minus accusamus
-                eligendi delectus ad? Similique, facilis esse? Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Accusantium
-                numquam saepe sequi fugiat in? Inventore ad tempore, rerum
-                laboriosam officia nobis repellendus commodi nemo!
-                Laboriosam blanditiis cumque repellendus autem a
-            </p>
-            <img src="./assets/images/dep2.jpg" alt="" />
+            <div class="cotainer" style="text-align: justify;">
+                <p>
+                    At last, we can conclude that the Problem of “Depression and Mental Health” is one of the most
+                    Common
+                    and
+                    Popular Problem, targeting mainly the Young Generation and also Peoples of various Age Groups of our
+                    Society.
+                </p> <br>
+                <p>
+                    As we know that Depression after all, leads to taking step in Suicide in most of the Cases, so to
+                    tackle
+                    it,
+                    we have some Existing Solutions as well as some Technical Solutions which are provided by us.
+                    Existing Solutions can be like Learning about Depression, Talking to Someone, keeping a Journal,
+                    meditations
+                    and Yogas, going for Exercises, avoiding Alcohols and Recreation drugs, eating a Balanced Diet,
+                    setting
+                    up
+                    Goals, spent time Relaxing and many more.
+                </p> <br>
+                <p>
+                    Other than these existing Solutions, we have some Technical Solutions which are like Building up
+                    apps,
+                    softwares, websites or Portals using Various Computer Languages like JAVA, C, C++, HTML etc.
+                    And, also by using the Concept of A.I. (Artificial Intelligence), we can like build up a Gadget or
+                    Sensor
+                    which can measure or Calculate the Level of Stress or Anxiety of an individual as Already written in
+                    the
+                    Body.
+                </p> <br>
+                <p>
+                    So, if we can Implement Such Technical Solutions to our Society, then less Percentage of People will
+                    be
+                    Depressed or Mentally Unbalanced.
+                    So, at last we can say that “A Depressed-Free Society will always be Beneficial for the Whole
+                    Nation”
+                </p>
+            </div>
         </div>
     </section>
 
@@ -349,11 +258,12 @@
         <div class="box-container">
             <div class="box about-us">
                 <h3>About us</h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Voluptate minima soluta distinctio eaque magni
-                    veritatis dicta dolore dignissimos totam quis!
-                </p>
+                <p>Mentored By - Arindam Saha</p>
+                <p> Made By - </p>
+                <p> Sagar Pratim Baruah (190310007039)</p>
+                <p> Sazzadur Rahman (190310007043)</p>
+                <p> Soura Jyoti Saikia (190310007046) </p>
+                <p>B.Tech, CSE - 5<sup>th</sup> Semester</p>
             </div>
 
             <div class="box location">
@@ -387,8 +297,6 @@
         </div>
 
         <h1 class="credit">
-            Created By <a href="#">GIMT developer</a>
-            <br />
             &copy; Copyright
             2021
         </h1>

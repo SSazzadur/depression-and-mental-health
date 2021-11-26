@@ -2,11 +2,12 @@
     <div class="box-container">
         <div class="box about-us">
             <h3>About us</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit. Voluptate minima soluta distinctio eaque magni
-                veritatis dicta dolore dignissimos totam quis!
-            </p>
+            <p>Mentored By - Arindam Saha</p>
+            <p> Made By - </p>
+            <p> Sagar Pratim Baruah (190310007039)</p>
+            <p> Sazzadur Rahman (190310007043)</p>
+            <p> Soura Jyoti Saikia (190310007046) </p>
+            <p>B.Tech, CSE - 5<sup>th</sup> Semester</p>
         </div>
 
         <div class="box location">
@@ -40,8 +41,6 @@
     </div>
 
     <h1 class="credit">
-        Created By <a href="#">GIMT developer</a>
-        <br />
         &copy; Copyright
         2021
     </h1>

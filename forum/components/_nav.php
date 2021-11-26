@@ -19,10 +19,9 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
         <a href="/clg-internship/">Home</a>
         <a href="/clg-internship/forum">Forum</a>
         <?php
-        if ($loggedIn) echo '<a href="./components/_logoutHandler.php">Logout</a>';
+        if ($loggedIn) echo '<a href="./components/_logoutHandler.php">Logout</a>
+                            <a href="javascript:void(0)" class="user-name">' . $_SESSION["userName"] . '</a>';
         else echo '<a href="javascript:void(0)" class="modal-open">Login</a>';
         ?>
-
-
     </nav>
 </header>

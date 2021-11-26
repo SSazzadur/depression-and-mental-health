@@ -18,17 +18,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $q_desc = $_POST['description'];
     $u_id = $_SESSION['userid'];
 
-    $sql = "INSERT INTO questions (`q_title`, `q_desc`, `u_id`, `timestamp`) VALUES ('$q_title', '$q_desc', '$u_id', current_timestamp()) ORDER BY a.timestamp DESC;";
-    $result = mysqli_query($conn, $sql);
+    if (!empty($q_title) && !empty($q_desc)) {
+        $sql = "INSERT INTO questions (`q_title`, `q_desc`, `u_id`, `timestamp`) VALUES ('$q_title', '$q_desc', '$u_id', current_timestamp()) ORDER BY a.timestamp DESC;";
+        $result = mysqli_query($conn, $sql);
 
-    if ($result) {
-        $showAlert = true;
-        $showError = false;
-        $alertMessage = "Question added successfully!";
+        if ($result) {
+            $showAlert = true;
+            $showError = false;
+            $alertMessage = "Question added successfully!";
+        } else {
+            $showError = true;
+            $showAlert = false;
+            $alertMessage = "Error adding question!";
+        }
     } else {
         $showError = true;
         $showAlert = false;
-        $alertMessage = "Error adding question!";
+        $alertMessage = "Please fill in all fields!";
     }
 }
 

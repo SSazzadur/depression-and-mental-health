@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include './components/_dbConnect.php'; ?>
 
 <!DOCTYPE html>
