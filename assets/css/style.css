@@ -365,6 +365,13 @@ header #menu {
   padding: 1rem 0;
 }
 
+@media screen and (max-width: 768px) {
+  .casestudy .box-container {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
 .futurework .column {
   display: -ms-grid;
   display: grid;
