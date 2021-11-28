@@ -45,6 +45,13 @@
                         <input type="email" id="email" name="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
+                        <label for="role">Register as</label>
+                        <select name="role" id="role">
+                            <option value="patient">Patient</option>
+                            <option value="psychiatrist">Psychiatrist</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="Password">
                     </div>

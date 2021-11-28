@@ -74,25 +74,25 @@ if (isset($_GET['error'])) {
     <section>
         <div class="alert-container">
             <?php if ($showAlert) { ?>
-            <div class="alert alert-success">
-                <p>
-                    <?php echo $alertMessage; ?>
-                </p>
+                <div class="alert alert-success">
+                    <p>
+                        <?php echo $alertMessage; ?>
+                    </p>
 
-                <div class="alert-close">
-                    &times;
+                    <div class="alert-close">
+                        &times;
+                    </div>
                 </div>
-            </div>
             <?php } else if ($showError) { ?>
-            <div class="alert alert-error">
-                <p>
-                    <?php echo $alertMessage; ?>
-                </p>
+                <div class="alert alert-error">
+                    <p>
+                        <?php echo $alertMessage; ?>
+                    </p>
 
-                <div class="alert-close">
-                    &times;
+                    <div class="alert-close">
+                        &times;
+                    </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
 
@@ -106,70 +106,107 @@ if (isset($_GET['error'])) {
         <div class="forum-container">
             <div class="heading">
                 <h1>Forum</h1>
+
                 <div class="sub-heading">
-                    <h3>Post your questions here</h3>
+                    <h3>Post questions here</h3>
                 </div>
             </div>
 
             <?php
-            echo $loggedIn ? '<div class="question-form">
-                    <form action="/clg-internship/forum/" method="POST">
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" name="title" id="title" class="question-title">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea name="description" id="description" class="question-description"></textarea>
-                        </div>
-                        <button type="submit" class="question-button">POST</button>
-                    </form>
-                </div>'
-                : '<div class="not-logged-in">
-                       <h1>You are not logged in. Please login to post questions!</h1>
-                       <button class="modal-open">Login</button>
-                   </div>';
+            if ($loggedIn) {
+                if ($_SESSION['userRole'] == 'patient') {
+                    echo '<div class="question-form">
+                            <form action="/clg-internship/forum/" method="POST">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" name="title" id="title" class="question-title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea name="description" id="description" class="question-description"></textarea>
+                                </div>
+                                <button type="submit" class="question-button">POST</button>
+                            </form>
+                        </div>';
+                }
+            } else {
+                echo '<div class="not-logged-in">
+                        <h1>You are not logged in. Please login to post questions!</h1>
+                        <button class="modal-open">Login</button>
+                    </div>';
+            }
             ?>
 
             <div class="questions-container">
-                <h1>Browse your related questions</h1>
+                <h1>Browse the questions</h1>
 
                 <div class="questions-container">
-
                     <?php
-                    $sql2 = "SELECT * FROM questions q LEFT JOIN users u ON q.u_id=u.u_id;";
-                    $result2 = mysqli_query($conn, $sql2);
-                    $noResult = true;
+                    if ($loggedIn) {
+                        $userid = $_SESSION['userid'];
+                        $userRole = $_SESSION['userRole'];
+                        $noResult = true;
 
-                    while ($row = mysqli_fetch_assoc($result2)) {
-                        $noResult = false;
-                        echo '<div class="question">
-                                <div class="img-container">
-                                    <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
-                                        alt="userlogo" width="65px">
-                                </div>
-                                <div class="question-content">
-                                    <a href="./question.php?q_id=' . $row["q_id"] . '">
-                                        <h3>' . $row["q_title"] . '</h3>
-                                        <p>' . $row["q_desc"] . '</p>
+                        if ($userRole == "patient") {
+                            $sql2 = "SELECT * FROM questions WHERE u_id='$userid' ORDER BY `timestamp` DESC;";
+                            $result2 = mysqli_query($conn, $sql2);
 
-                                        <div class="question-footer">
-                                            <p>Asked by <span>' . $row['u_name'] . '</span></p>
-                                        </div>
-                                    </a>
-                                </div>  
-                              </div>';
+                            while ($row = mysqli_fetch_assoc($result2)) {
+                                $noResult = false;
+                                echo '<div class="question">
+                                    <div class="img-container">
+                                        <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
+                                            alt="userlogo" width="65px">
+                                    </div>
+                                    <div class="question-content">
+                                        <a href="./question.php?q_id=' . $row["q_id"] . '">
+                                            <h3>' . $row["q_title"] . '</h3>
+                                            <p>' . $row["q_desc"] . '</p>
+                                        </a>
+                                    </div>  
+                                </div>';
+                            }
+                        }
+
+                        if ($userRole == "psychiatrist") {
+                            $sql2 = "SELECT * FROM questions q LEFT JOIN users u ON q.u_id=u.u_id ORDER BY q.timestamp DESC;";
+                            $result2 = mysqli_query($conn, $sql2);
+
+                            while ($row = mysqli_fetch_assoc($result2)) {
+                                $noResult = false;
+                                echo '<div class="question">
+                                    <div class="img-container">
+                                        <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
+                                            alt="userlogo" width="65px">
+                                    </div>
+                                    <div class="question-content">
+                                        <a href="./question.php?q_id=' . $row["q_id"] . '">
+                                            <h3>' . $row["q_title"] . '</h3>
+                                            <p>' . $row["q_desc"] . '</p>
+
+                                            <div class="question-footer">
+                                                <p>Asked by <span>' . $row['u_name'] . '</span></p>
+                                            </div>
+                                        </a>
+                                    </div>  
+                                </div>';
+                            }
+                        }
+
+                        if ($noResult) {
+                            echo '<div class="no-result">
+                                    <h1>There is no questions here.</h1>
+                                    <p>
+                                        <b>No questions yet...</b>
+                                    </p>
+                                </div>';
+                        }
+                    } else {
+                        echo '<div class="not-logged-in">
+                                <h1 style="border:none">You are not logged in. Please login to view your questions!</h1>
+                                <button class="modal-open">Login</button>
+                            </div>';
                     }
-
-                    if ($noResult) {
-                        echo '<div class="no-result">
-                                <h1>There is no questions here.</h1>
-                                <p>
-                                    <b>Be the first person to ask a question!</b>
-                                </p>
-                              </div>';
-                    }
-
                     ?>
 
                 </div>

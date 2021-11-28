@@ -3,9 +3,23 @@
 <?php
 session_start();
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true") {
-    $loggedIn = true;
+    if ($_SESSION['userRole'] == 'patient') {
+        $sql = "SELECT u_id FROM questions WHERE q_id = " . $_GET["q_id"];
+        $result = mysqli_query($conn, $sql);
+
+        $row = mysqli_fetch_assoc($result);
+        if ($row["u_id"] == $_SESSION["userid"]) {
+            $loggedIn = true;
+        } else {
+            header("Location: index.php");
+        }
+    } else {
+        $loggedIn = true;
+    }
 } else {
     $loggedIn = false;
+
+    header("Location: index.php");
 }
 ?>
 
@@ -62,25 +76,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <section>
         <div class="alert-container">
             <?php if ($showAlert) { ?>
-            <div class="alert alert-success">
-                <p>
-                    <?php echo $alertMessage; ?>
-                </p>
+                <div class="alert alert-success">
+                    <p>
+                        <?php echo $alertMessage; ?>
+                    </p>
 
-                <div class="alert-close">
-                    &times;
+                    <div class="alert-close">
+                        &times;
+                    </div>
                 </div>
-            </div>
             <?php } else if ($showError) { ?>
-            <div class="alert alert-error">
-                <p>
-                    <?php echo $alertMessage; ?>
-                </p>
+                <div class="alert alert-error">
+                    <p>
+                        <?php echo $alertMessage; ?>
+                    </p>
 
-                <div class="alert-close">
-                    &times;
+                    <div class="alert-close">
+                        &times;
+                    </div>
                 </div>
-            </div>
             <?php } ?>
         </div>
         <div class="question-viewer">
@@ -139,15 +153,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <p>' . $answer . '</p>
 
                                 <div class="answer-footer">
-                                    <p>Answered by <span>' . $u_name . '</span></p>
+                                    <p>Replied by <span>' . $u_name . '</span></p>
                                 </div>
                             </div>
                         </div>';
                 }
                 if ($noResult) {
                     echo '<div class="no-result">
-                            <h1>No answers yet!</h1>
-                            <p>Be the first to answer this question!</p>
+                            <h1>No replies yet!</h1>
+                            <p>Be the first to reply to this question!</p>
                         </div>';
                 }
                 ?>

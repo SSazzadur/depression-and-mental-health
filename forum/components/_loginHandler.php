@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["userEmail"] = $email;
             $_SESSION["userid"] = $row["u_id"];
             $_SESSION["userName"] = $row["u_name"];
+            $_SESSION["userRole"] = $row["u_role"];
 
             header("Location: /clg-internship/forum/index.php");
             exit();

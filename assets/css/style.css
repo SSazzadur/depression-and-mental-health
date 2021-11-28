@@ -1172,14 +1172,14 @@ header #menu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .modal-shadow .container .form-box .form form h1 {
   font-size: 1.5em;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 500;
 }
 
@@ -1238,6 +1238,28 @@ header #menu {
 
 .modal-shadow .container .form-box .form form .form-group input[type="submit"]:hover, .modal-shadow .container .form-box .form form .form-group input[type="submit"]:focus {
   background: #028bca;
+}
+
+.modal-shadow .container .form-box .form form .form-group select {
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  font-size: 1.5rem;
+  border: 1px solid #a2f6a2;
+  color: #16e916;
+  background: #fff;
+}
+
+.modal-shadow .container .form-box .form form .form-group select:focus, .modal-shadow .container .form-box .form form .form-group select:active {
+  border: none;
+  -webkit-box-shadow: 0 0 2px 1px #16e916;
+          box-shadow: 0 0 2px 1px #16e916;
+}
+
+.modal-shadow .container .form-box .form form .form-group select option {
+  background: #fff;
 }
 
 .modal-shadow .container .form-box .signIn-form {
