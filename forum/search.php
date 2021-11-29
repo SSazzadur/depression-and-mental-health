@@ -30,15 +30,21 @@
 
                 <div class="questions-container">
                     <?php
-                    $search = $_GET["search"];
+                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                        $search = $_GET["search"];
 
-                    $sql = "SELECT * FROM questions WHERE MATCH(`q_title`, `q_desc`) AGAINST('$search');";
-                    $result = mysqli_query($conn, $sql);
-                    $noResult = true;
+                        if ($_SESSION['userRole'] == 'patient') {
+                            $userid = $_SESSION['userid'];
+                            $sql = "SELECT * FROM questions WHERE MATCH(`q_title`, `q_desc`) AGAINST('$search') AND u_id='$userid';";
+                        } else {
+                            $sql = "SELECT * FROM questions WHERE MATCH(`q_title`, `q_desc`) AGAINST('$search');";
+                        }
+                        $result = mysqli_query($conn, $sql);
+                        $noResult = true;
 
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $noResult = false;
-                        echo '<div class="question">
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $noResult = false;
+                            echo '<div class="question">
                                 <div class="img-container">
                                     <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/user_generic_green.png"
                                         alt="userlogo" width="65px">
@@ -50,17 +56,24 @@
                                     </a>
                                 </div>  
                               </div>';
-                    }
+                        }
 
-                    if ($noResult) {
-                        echo '<div class="no-result">
+                        if ($noResult) {
+                            echo '<div class="no-result">
                                 <h1>There is no questions here.</h1>
                                 <p>
                                     <b>Be the first person to ask a question!</b>
                                 </p>
                               </div>';
+                        }
+                    } else {
+                        echo '<div class="no-result">
+                            <h1>You need to login to see the search result.</h1>
+                            <p>
+                                <b>Please login to see the search result.</b>
+                            </p>
+                          </div>';
                     }
-
                     ?>
 
                 </div>
